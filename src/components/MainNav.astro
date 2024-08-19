@@ -116,35 +116,3 @@ const airQualityContent = await getCollection('air-quality');
         </div>
     </div>
 </div>
-
-<script>
-// Navigation Bar Scroll Effect
-document.addEventListener("DOMContentLoaded", function() {
-    const navTop = document.querySelector('.nav-top') as HTMLElement | null;
-    const navBottom = document.querySelector('.nav-bottom') as HTMLElement | null;
-    const stickyClass = 'sticky';
-    
-    if (navTop && navBottom) {
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > navTop.offsetHeight) {
-                navBottom.classList.add(stickyClass);
-            } else {
-                navBottom.classList.remove(stickyClass);
-            }
-        });
-    }
-});
-
-// Hamburger Menu Toggle
-document.addEventListener("DOMContentLoaded", function() {
-    const hamburger = document.querySelector('.hamburger') as HTMLElement | null;
-    const navMenu = document.querySelector('.nav-menu') as HTMLElement | null;
-
-    if (hamburger && navMenu) {
-        hamburger.addEventListener('click', function() {
-            const isOpen = navMenu.classList.toggle('open');
-            hamburger.setAttribute('aria-expanded', isOpen.toString());
-        });
-    }
-});
-</script>

@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
   branch: main
-  repo: username/repo
+  repo: bfuller7141/Sun-City-Mechanical-Test
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
