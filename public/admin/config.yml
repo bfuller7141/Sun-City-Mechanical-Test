@@ -22,7 +22,7 @@ collections:
         name: "city"
         widget: "string"
       - label: "About"
-        name: "body"
+        name: "about"
         widget: "markdown"
       - label: "Image"
         name: "image"
