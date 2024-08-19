@@ -1,0 +1,54 @@
+---
+import { marked } from 'marked';
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import MainNav from "../components/MainNav.astro";
+import Footer from "../components/Footer.astro";
+import SkipToMain from "../components/SkipToMain.astro";
+
+type PropsLegal = CollectionEntry<'legal'>['data'];
+
+const { title, content } = Astro.props as PropsLegal;
+
+const contentHTML = marked(content);
+---
+
+<html lang="en">
+  <head>
+    <BaseHead
+      title={`${title} | Sun City Mechanical`}
+      description={`${title} page for Sun City Mechanical`}
+      keywords="terms, privacy, policy, legal"
+      image="/images/default-image.jpg"
+      url={`https://www.suncitymechanical.com/${Astro.props.slug}`} />
+    <meta name="author" content="Tripass Design" />
+  </head>
+  <body>
+    <SkipToMain />
+    <header>
+      <MainNav />
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero-global">
+          <div class="container">
+            <div class="wrapper center">
+              <div class="line"></div>
+              <h1 class="page-title">{title}</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="padding-global">
+          <div class="container blog">
+            <div set:html={contentHTML}></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <Footer />
+    </footer>
+  </body>
+</html>

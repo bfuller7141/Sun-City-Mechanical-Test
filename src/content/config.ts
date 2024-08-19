@@ -71,5 +71,15 @@ const cooling = defineCollection({
   }),
 });
 
+// Legal Collection
+const legal = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    content: z.string(), // The legal content as markdown
+  }),
+});
+
 // Export Collections
-export const collections = { cities, testimonials, airQuality, heating, cooling };
+export const collections = { cities, testimonials, airQuality, heating, cooling, legal };
+

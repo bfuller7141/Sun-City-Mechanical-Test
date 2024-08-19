@@ -2,6 +2,10 @@
 import '../styles/global.css';
 import '../styles/footer.css';
 import FacebookButton from './FacebookButton.astro';
+import { getCollection } from 'astro:content';
+
+// Fetch the legal documents from the collection
+const legalPages = await getCollection('legal');
 ---
 <div class="padding-global">
     <div class="container">
@@ -38,5 +42,52 @@ import FacebookButton from './FacebookButton.astro';
             </nav>
         </div>
         <div class="title-footer">Copyright © 2024. Sun City Mechanical. AC ROC Residential - # 241763 | AC ROC Commercial - # 249613</div>
+
+        <!-- Legal Links Section -->
+        <div class="legal-links-wrapper">
+            <hr class="footer-divider" />
+            <nav class="legal-links-nav">
+                <ul>
+                    {legalPages.map((page) => (
+                        <li>
+                            <a href={`/legal/${page.slug}`}>{page.data.title}</a>
+                        </li>
+                    ))}
+                </ul>
+            </nav>
+        </div>
     </div>
 </div>
+
+<style>
+  .legal-links-wrapper {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .footer-divider {
+    border: none;
+    height: 1px;
+    background-color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  .legal-links-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .legal-links-nav a {
+    color: #fff;
+    font-size: 0.875rem; /* Smaller font size */
+    text-decoration: none;
+  }
+
+  .legal-links-nav a:hover {
+    text-decoration: underline;
+  }
+</style>

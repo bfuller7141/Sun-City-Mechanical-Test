@@ -176,3 +176,20 @@ collections:
       - label: "Answer 3"
         name: "answer3"
         widget: "string"
+
+  - name: "legal"
+    label: "Legal Links"
+    folder: "src/content/legal"
+    create: true
+    extension: "md"
+    slug: "{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Content"
+        name: "content"
+        widget: "markdown"
+      - label: "Slug"
+        name: "slug"
+        widget: "string"
