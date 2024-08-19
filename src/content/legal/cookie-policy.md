@@ -19,21 +19,21 @@ content: >-
   We use cookies for various purposes, including:
 
 
-  1. Ensuring the website functions correctly.
+  * Ensuring the website functions correctly.
 
-  2. Analyzing website traffic and usage patterns to improve performance.
+  * Analyzing website traffic and usage patterns to improve performance.
 
-  3. Personalizing content and advertisements based on your preferences.
+  * Personalizing content and advertisements based on your preferences.
 
 
   ### Types of cookies we use
 
 
-  1. Essential Cookies: Necessary for the website to function properly. These cannot be disabled.
+  * Essential Cookies: Necessary for the website to function properly. These cannot be disabled.
 
-  2. Performance Cookies: Collect information about how visitors use the website to help improve its performance.
+  * Performance Cookies: Collect information about how visitors use the website to help improve its performance.
 
-  3. Functional Cookies: Allow the website to remember choices you make and provide enhanced features.
+  * Functional Cookies: Allow the website to remember choices you make and provide enhanced features.
 
 
   ### Managing cookies
@@ -46,8 +46,6 @@ content: >-
 
 
   We may update this Cookie Policy from time to time. Any changes will be posted on this page.
-
-
 
 
   This policy was last updated on 08/19/2024.
