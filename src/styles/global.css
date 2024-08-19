@@ -108,6 +108,11 @@ html {
     scroll-behavior: smooth;
 }
 
+::selection {
+    background-color: var(--red-500);
+    color: var(--white);
+}
+
 body {
     font-family: 'neue-haas-grotesk-text', sans-serif;
     font-size: var(--font-md);
