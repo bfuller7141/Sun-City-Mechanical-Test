@@ -16,7 +16,7 @@ collections:
     folder: "src/content/cities"
     create: true
     extension: "md"
-    slug: "{{slug}}"
+    slug: "{{city}}"
     fields:
       - label: "City"
         name: "city"
