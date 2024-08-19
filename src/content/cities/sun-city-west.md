@@ -8,6 +8,6 @@ about: >
 
 
   Whether you need regular maintenance, a repair, or a new installation, our experienced technicians are here to help. We’re committed to ensuring your HVAC system works efficiently, so you can enjoy a comfortable and worry-free home in Sun City West.
-image: "public/images/cities/sun-city-west.webp"
-slug: "sun-city-west"
+image: /uploads/sun-city-west.webp
+slug: sun-city-west
 ---
