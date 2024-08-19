@@ -36,7 +36,7 @@ collections:
     folder: "src/content/testimonials"
     create: true
     extension: "md"
-    slug: "{{slug}}"
+    slug: "{{name}}"
     fields:
       - label: "Name"
         name: "name"
@@ -59,7 +59,7 @@ collections:
     folder: "src/content/air-quality"
     create: true
     extension: "md"
-    slug: "{{slug}}"
+    slug: "{{title}}"
     fields:
       - label: "Title"
         name: "title"
@@ -100,7 +100,7 @@ collections:
     folder: "src/content/heating"
     create: true
     extension: "md"
-    slug: "{{slug}}"
+    slug: "{{title}}"
     fields:
       - label: "Title"
         name: "title"
@@ -141,7 +141,7 @@ collections:
     folder: "src/content/cooling"
     create: true
     extension: "md"
-    slug: "{{slug}}"
+    slug: "{{title}}"
     fields:
       - label: "Title"
         name: "title"
