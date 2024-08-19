@@ -40,7 +40,6 @@ content: >-
   Phone: (623) 214-2366
 
 
-  Date
 
 
   This statement was last updated on 08/19/2024.
