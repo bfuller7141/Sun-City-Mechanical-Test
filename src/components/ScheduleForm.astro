@@ -14,22 +14,23 @@ declare global {
 <html lang="en">
 <head>
   <BaseHead
-  title="Schedule a Service | Sun City Mechanical"
-  description="Schedule your HVAC service with Sun City Mechanical, serving Buckeye, Peoria, Surprise, Goodyear, Sun City, and surrounding areas."
-  keywords="schedule a service, HVAC, heating, cooling, plumbing, West Valley, Buckeye, Peoria, Surprise, Goodyear, Sun City, Sun City West, Avondale, El Mirage, Arizona"
-  image="/path-to-schedule-image.jpg"
-  url="https://www.suncitymechanical.com/schedule"  
+    title="Schedule a Service | Sun City Mechanical"
+    description="Schedule your HVAC service with Sun City Mechanical, serving Buckeye, Peoria, Surprise, Goodyear, Sun City, and surrounding areas."
+    keywords="schedule a service, HVAC, heating, cooling, plumbing, West Valley, Buckeye, Peoria, Surprise, Goodyear, Sun City, Sun City West, Avondale, El Mirage, Arizona"
+    image="/path-to-schedule-image.jpg"
+    url="https://www.suncitymechanical.com/schedule"  
   />
   <meta name="author" content="Tripass Design" />
-<!-- Ensure CSS is correctly loaded -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  
+  <!-- Ensure CSS is correctly loaded -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
-<!-- Load Flatpickr with defer -->
-<script src="https://cdn.jsdelivr.net/npm/flatpickr" defer></script>
+  <!-- Load Flatpickr with defer -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr" defer></script>
 
-<!-- Load reCAPTCHA with async and defer -->
-<script src="https://www.google.com/recaptcha/api.js?render=your-site-key" async defer></script>
-
+  <!-- Load reCAPTCHA with async and defer -->
+  <script src="https://www.google.com/recaptcha/api.js?render=your-site-key" async defer></script>
+  
 </head>
 <body>
   <SkipToMain />
@@ -38,110 +39,110 @@ declare global {
   </header>
   <main id="main-content">
     <section class="scheduling-form-section">
-        <div class="large-top">
-            <div class="container">
-                <div class="wrapper center">
-                <h1 class="page-title">Schedule A Service</h1>
-                <div class="line margin-bottom"></div>
-                </div>
-            </div>
-            <div class="container blog">
-            <form 
+      <div class="large-top">
+        <div class="container">
+          <div class="wrapper center">
+            <h1 class="page-title">Schedule A Service</h1>
+            <div class="line margin-bottom"></div>
+          </div>
+        </div>
+        <div class="container blog">
+          <form 
             name="service-scheduling" 
             method="POST" 
             data-netlify="true" 
             data-netlify-honeypot="bot-field"
             class="scheduling-form"
-            >
+          >
             <input type="hidden" name="form-name" value="service-scheduling" />
         
             <!-- Hide the "Don't fill this out" field -->
             <div class="hidden" style="display: none;">
-                <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+              <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
             </div>
         
             <!-- First Name and Last Name -->
             <div class="form-row">
-                <div class="form-group">
+              <div class="form-group">
                 <label for="first-name">First Name*</label>
                 <input type="text" id="first-name" name="first-name" class="text-field" placeholder="John" autocomplete="given-name" required />
-                </div>
-                <div class="form-group">
+              </div>
+              <div class="form-group">
                 <label for="last-name">Last Name*</label>
                 <input type="text" id="last-name" name="last-name" class="text-field" placeholder="Doe" autocomplete="family-name" required />
-                </div>
+              </div>
             </div>
         
             <!-- Email -->
             <div class="form-group">
-                <label for="email">Email*</label>
-                <input type="email" id="email" name="email" class="text-field" placeholder="john.doe@example.com" autocomplete="email" required />
+              <label for="email">Email*</label>
+              <input type="email" id="email" name="email" class="text-field" placeholder="john.doe@example.com" autocomplete="email" required />
             </div>
         
             <!-- Phone Number -->
             <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" class="text-field" placeholder="(123) 456-7890" autocomplete="tel" />
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" class="text-field" placeholder="(123) 456-7890" autocomplete="tel" />
             </div>
         
             <!-- City, State, and Zip Code -->
             <div class="form-row">
-                <div class="form-group">
+              <div class="form-group">
                 <label for="city">City*</label>
                 <input type="text" id="city" name="city" class="text-field" placeholder="Phoenix" autocomplete="address-level2" required />
-                </div>
-                <div class="form-group">
+              </div>
+              <div class="form-group">
                 <label for="state">State*</label>
                 <select id="state" name="state" class="text-field" autocomplete="address-level1" required>
-                    <option value="AZ" selected>Arizona</option>
+                  <option value="AZ" selected>Arizona</option>
                 </select>
-                </div>
-                <div class="form-group">
+              </div>
+              <div class="form-group">
                 <label for="zip">Zip Code*</label>
                 <input type="text" id="zip" name="zip" class="text-field" placeholder="85001" autocomplete="postal-code" required />
-                </div>
+              </div>
             </div>
         
             <!-- Type of Service -->
             <div class="form-group">
-                <label for="service-type">Type of Service*</label>
-                <select id="service-type" name="service-type" class="text-field" required>
+              <label for="service-type">Type of Service*</label>
+              <select id="service-type" name="service-type" class="text-field" required>
                 <option value="" disabled selected>Select a service</option>
                 <option value="heating">Heating</option>
                 <option value="cooling">Cooling</option>
                 <option value="air-quality">Air Quality</option>
-                </select>
+              </select>
             </div>
         
             <!-- Preferred Dates -->
             <div class="form-row">
-                <div class="form-group">
+              <div class="form-group">
                 <label for="preferred-date-1">Preferred Date 1*</label>
-                <input type="text" id="preferred-date-1" name="preferred-date-1" class="text-field" placeholder="mm/dd/yy" required />
-                </div>
-                <div class="form-group">
+                <input type="text" id="preferred-date-1" name="preferred-date-1" class="text-field flatpickr-input" placeholder="mm/dd/yy" required />
+              </div>
+              <div class="form-group">
                 <label for="preferred-date-2">Preferred Date 2*</label>
-                <input type="text" id="preferred-date-2" name="preferred-date-2" class="text-field" placeholder="mm/dd/yy" required />
-                </div>
-                <div class="form-group">
+                <input type="text" id="preferred-date-2" name="preferred-date-2" class="text-field flatpickr-input" placeholder="mm/dd/yy" required />
+              </div>
+              <div class="form-group">
                 <label for="preferred-date-3">Preferred Date 3</label>
-                <input type="text" id="preferred-date-3" name="preferred-date-3" class="text-field" placeholder="mm/dd/yy" />
-                </div>
+                <input type="text" id="preferred-date-3" name="preferred-date-3" class="text-field flatpickr-input" placeholder="mm/dd/yy" />
+              </div>
             </div>
         
             <!-- Additional Comments -->
             <div class="form-group">
-                <label for="comments">Additional Comments</label>
-                <textarea id="comments" name="comments" class="text-field" placeholder="Enter any additional information here..."></textarea>
+              <label for="comments">Additional Comments</label>
+              <textarea id="comments" name="comments" class="text-field" placeholder="Enter any additional information here..."></textarea>
             </div>
         
             <!-- Submit Button -->
             <div class="form-group">
-                <button type="submit" class="btn">Submit</button>
+              <button type="submit" class="btn">Submit</button>
             </div>
-            </form>
+          </form>
         </div>
-    </div>
+      </div>
     </section>
     
     <style>
@@ -243,6 +244,10 @@ declare global {
 
       /* Flatpickr styling to match the input fields */
       .flatpickr-input {
+        padding: var(--spacing-sm);
+        font-size: var(--font-md);
+        font-family: 'neue-haas-grotesk-text', sans-serif;
+        color: var(--navy);
         border: 2px solid var(--blue-500);
         border-radius: 0.25rem;
         background-color: transparent;
@@ -254,6 +259,21 @@ declare global {
         outline: none;
         border-color: var(--light-blue-500);
         background-color: transparent;
+      }
+
+      /* Override mobile-specific Flatpickr styles if needed */
+      @media (max-width: 768px) {
+        .flatpickr-input {
+          font-size: var(--font-md);
+          padding: var(--spacing-sm);
+        }
+      }
+
+      /* Adjust the calendar icon if visible */
+      .flatpickr-calendar {
+        box-shadow: none; /* Remove default shadow */
+        border: 2px solid var(--blue-500); /* Match border style */
+        border-radius: 0.25rem; /* Match input border radius */
       }
     </style>
     

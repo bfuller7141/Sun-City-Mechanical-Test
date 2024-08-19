@@ -711,3 +711,39 @@ p {
         align-items: center;
     }
 }
+
+
+/* Flatpickr Styles */
+/* Flatpickr styling to match the input fields */
+.flatpickr-input {
+    padding: var(--spacing-sm);
+    font-size: var(--font-md);
+    font-family: 'neue-haas-grotesk-text', sans-serif;
+    color: var(--navy);
+    border: 2px solid var(--blue-500);
+    border-radius: 0.25rem;
+    background-color: transparent;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    width: 100%;
+}
+
+.flatpickr-input:focus, .flatpickr-input:hover {
+    outline: none;
+    border-color: var(--light-blue-500);
+    background-color: transparent;
+}
+
+/* Override mobile-specific Flatpickr styles if needed */
+@media (max-width: 768px) {
+    .flatpickr-input {
+        font-size: var(--font-md);
+        padding: var(--spacing-sm);
+    }
+}
+
+/* Adjust the calendar icon if visible */
+.flatpickr-calendar {
+    box-shadow: none; /* Remove default shadow */
+    border: 2px solid var(--blue-500); /* Match border style */
+    border-radius: 0.25rem; /* Match input border radius */
+}
