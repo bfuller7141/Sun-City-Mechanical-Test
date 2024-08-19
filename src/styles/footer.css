@@ -76,6 +76,19 @@
     .wrapper-footer {
         gap: 2rem;
     }
+    .legal-links-wrapper {
+        text-align: left;
+        margin-top: 1rem;
+      }
+    .legal-links-nav ul {
+        justify-content: flex-start;
+      }
+    .legal-links-wrapper {
+        text-align: left;
+        width: 100%;
+        margin-top: 1rem;
+        box-sizing: border-box;
+      }
 }
 
 @media (max-width: 450px)
@@ -89,3 +102,37 @@
         gap: 2rem;
     }
 }
+
+/* Legal Footer */
+.legal-links-wrapper {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .footer-divider {
+    border: none;
+    height: 2px;
+    background-color: var(--red-500);
+    margin-top: 2rem;
+  }
+
+  .legal-links-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .legal-links-nav a {
+    color: var(--white);
+    font-family: 'neue-haas-grotesk-text', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+  }
+
+  .legal-links-nav a:hover {
+    text-decoration: underline;
+  }

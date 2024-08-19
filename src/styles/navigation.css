@@ -276,6 +276,7 @@ li:hover .nav-link .icon-nav, li:focus .nav-link .icon-nav {
 
 /* Responsive Hamburger */
 @media (max-width: 1150px) {
+
     .nav-menu {
         display: none;
         position: fixed;
@@ -325,9 +326,22 @@ li:hover .nav-link .icon-nav, li:focus .nav-link .icon-nav {
     }
 
     .dropdown-list {
+        min-width: 100%;
         display: none;
         position: relative;
         box-shadow: none;
+    }
+
+    .dropdown-link a {
+        display: block;
+        height: 100%;
+        width: 100%;
+        padding: 0.5rem 0 0.5rem 1rem;
+        font-family: 'neue-haas-grotesk-text', sans-serif;
+        font-weight: 600;
+        font-size: 1rem;
+        color: var(--dark-blue-500);
+        text-decoration: none;
     }
 
     .nav-link:focus, .dropdown-link a:focus {
