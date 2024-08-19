@@ -41,11 +41,9 @@ const legalPages = await getCollection('legal');
                 </ul>
             </nav>
         </div>
+        <hr class="footer-divider" />
         <div class="title-footer">Copyright © 2024. Sun City Mechanical. AC ROC Residential - # 241763 | AC ROC Commercial - # 249613</div>
-
-        <!-- Legal Links Section -->
         <div class="legal-links-wrapper">
-            <hr class="footer-divider" />
             <nav class="legal-links-nav">
                 <ul>
                     {legalPages.map((page) => (
@@ -67,9 +65,9 @@ const legalPages = await getCollection('legal');
 
   .footer-divider {
     border: none;
-    height: 1px;
-    background-color: #fff;
-    margin-bottom: 1rem;
+    height: 2px;
+    background-color: var(--red-500);
+    margin-top: 2rem;
   }
 
   .legal-links-nav ul {
@@ -82,8 +80,10 @@ const legalPages = await getCollection('legal');
   }
 
   .legal-links-nav a {
-    color: #fff;
-    font-size: 0.875rem; /* Smaller font size */
+    color: var(--white);
+    font-family: 'neue-haas-grotesk-text', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
     text-decoration: none;
   }
 
