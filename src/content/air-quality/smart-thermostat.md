@@ -1,7 +1,7 @@
 ---
 title: "Smart Thermostat"
 description: "Gain ultimate control of your HVAC system with a state-of-the-art smart thermostat system"
-icon: "/public/images/icons/air-quality-icon.svg"
+icon: "/images/icons/air-quality-icon.svg"
 slug: "smart-thermostats"
 buttonColor: "#6e9eca"
 content: "

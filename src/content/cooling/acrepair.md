@@ -1,7 +1,7 @@
 ---
 title: "AC Repair"
 description: "Gain ultimate control of your HVAC system with a state-of-the-art smart thermostat system"
-icon: "/public/images/icons/cooling-icon.svg"
+icon: "/images/icons/cooling-icon.svg"
 slug: "ac-repair"
 buttonColor: "#6e9eca"
 content: "
