@@ -17,7 +17,7 @@ const randomTestimonials = shuffleArray(testimonials).slice(0, 6); // Displaying
 
 <div class="testimonial-grid-wrapper">
     <div class="testimonial-grid">
-        {randomTestimonials.map((testimonial, index) => (
+        {randomTestimonials.map((testimonial, index: number) => (
             <div>
                 <TestimonialCard
                     name={testimonial.frontmatter.name} 
