@@ -1,9 +1,9 @@
 ---
 import LocationCard from './LocationCard.astro'
 
-const cities= await Astro.glob("../content/cities/*.md");
+const cities = await Astro.glob("../content/cities/*.md");
 
-// And More at End of Grid
+// Separate the "And More" card from the regular cities
 const andMoreCard = cities.find(city => city.frontmatter.slug === 'general');
 const regularCities = cities.filter(city => city.frontmatter.slug !== 'general');
 ---
@@ -23,7 +23,6 @@ const regularCities = cities.filter(city => city.frontmatter.slug !== 'general')
         />
     )}
 </ul>
-
 
 <style>
     .location-card-wrapper {
