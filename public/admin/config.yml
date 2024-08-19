@@ -59,7 +59,7 @@ collections:
     folder: "src/content/air-quality"
     create: true
     extension: "md"
-    slug: "{title}}"
+    slug: "{{title}}"
     fields:
       - label: "Title"
         name: "title"
