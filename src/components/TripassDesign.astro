@@ -1,0 +1,90 @@
+---
+import { useEffect, useState } from 'react';
+
+const showConfetti = () => {
+  const confetti = document.getElementById('confetti');
+  if (confetti) {
+    confetti.style.display = 'block';
+    setTimeout(() => {
+      confetti.style.display = 'none';
+      window.location.href = 'https://tripassdesign.com';
+    }, 1000);
+  }
+};
+---
+
+<style>
+  .badge-container {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+      background-color: white;
+      color: #333;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      z-index: 1000;
+  }
+
+  .badge-container:hover {
+      transform: translateY(-3px);
+  }
+
+  .heart {
+      color: #FF0000;
+      margin-left: 5px;
+  }
+
+  .heart-confetti {
+      display: none;
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 200px;
+      pointer-events: none;
+      z-index: 9999;
+  }
+
+  .heart-confetti span {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background-color: #FF0000;
+      border-radius: 50%;
+      animation: confetti-fall 1s ease forwards;
+  }
+
+  @keyframes confetti-fall {
+      from {
+          opacity: 1;
+          transform: translateY(0);
+      }
+      to {
+          opacity: 0;
+          transform: translateY(100px) rotate(360deg);
+      }
+  }
+</style>
+
+<div class="badge-container" onclick="showConfetti()"></div>
+  Made with <span class="heart">❤️</span> by Tripass Design
+</div>
+
+<div class="heart-confetti" id="confetti">
+  <span style="left: 10%; animation-delay: 0s;"></span>
+  <span style="left: 20%; animation-delay: 0.1s;"></span>
+  <span style="left: 30%; animation-delay: 0.2s;"></span>
+  <span style="left: 40%; animation-delay: 0.3s;"></span>
+  <span style="left: 50%; animation-delay: 0.4s;"></span>
+  <span style="left: 60%; animation-delay: 0.5s;"></span>
+  <span style="left: 70%; animation-delay: 0.6s;"></span>
+  <span style="left: 80%; animation-delay: 0.7s;"></span>
+  <span style="left: 90%; animation-delay: 0.8s;"></span>
+</div>
