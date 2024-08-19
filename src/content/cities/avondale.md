@@ -1,6 +1,5 @@
 ---
 city: Avondale
-about: This is a random input about this random city
 image: /uploads/avondale.webp
 slug: avondale
 ---
