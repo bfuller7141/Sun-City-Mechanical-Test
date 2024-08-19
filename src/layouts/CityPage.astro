@@ -43,7 +43,7 @@ const { city, image, about } = Astro.props;
           <div class="large-bottom">
             <div class="container">
               <div class="column-2">
-                <img class="image" src={`/${image}`} alt={`Image of ${city}`} />
+                <img class="image" src={`${image}`} alt={`Image of ${city}`} />
                 <div class="wrapper">
                   <h2 class="section-title">HVAC Services<br><span class="red">For {city}</span></h2>
                   <div class="paragraph" set:html={about}></div>
