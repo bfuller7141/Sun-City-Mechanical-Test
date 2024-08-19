@@ -1,0 +1,51 @@
+---
+import '../styles/global.css';
+---
+<a href="https://www.facebook.com/SunCityMechanicalLlc/" target="_blank" class="fb-button" aria-label="Follow us on facebook">
+    <div class="fb-wrapper">
+        <svg class="fb-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z" fill="currentcolor"/></svg>
+    </div>
+    <span class="fb-hover">Follow Us on Facebook</span>
+</a>
+
+<style>
+    .fb-button {
+        display: flex;
+        min-width: fit-content;
+        align-items: center;
+        gap: 1rem;
+        background-color: var(--red-500);
+        color: white;
+        padding-right: 0.5rem;
+        transition: background-color 0.3s;
+        cursor: pointer;
+        border-radius: 0.125rem;
+        overflow: hidden;
+        text-decoration: none;
+    }
+
+    .fb-button:hover {
+        background-color: var(--red-700);
+    }
+
+    .fb-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.25rem 0.5rem;
+        background-color: var(--red-700);
+        border-radius: 0.125rem;
+    }
+
+    .fb-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 1.5rem;
+    }
+
+    .fb-hover {
+        font-family: 'Russo One', sans-serif;
+        text-transform: uppercase;
+        font-size: 1.25rem;
+    }

@@ -1,0 +1,74 @@
+---
+import '../styles/global.css';
+import TestimonialCard from './TestimonialCard.astro';
+import type { MarkdownInstance } from 'astro';
+
+const testimonials = await Astro.glob("../content/testimonials/*.md");
+
+function shuffleArray(array: any[]) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+const randomTestimonials = shuffleArray(testimonials).slice(0, 3);
+---
+
+<div class="testimonial-slider-wrapper">
+    <div class="testimonial-slider">
+        {randomTestimonials.map((testimonial, index) => (
+            <div class="testimonial-slide">
+                <TestimonialCard
+                    name={testimonial.frontmatter.name} 
+                    rating={testimonial.frontmatter.rating}
+                    quote={testimonial.frontmatter.testimonial}
+                />
+            </div>
+        ))}
+    </div>
+</div>
+
+<style>
+.testimonial-slider-wrapper {
+    overflow: hidden; /* Prevent horizontal overflow outside of slider */
+    width: 100%;
+}
+
+.testimonial-slider {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Mobile Styles: One card at a time with horizontal scrolling */
+@media (max-width: 983px) {
+    .testimonial-slider {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1rem;
+        padding: 1rem 0; /* Vertical padding only */
+        box-sizing: content-box; /* Ensure padding doesn't affect the layout */
+    }
+
+    .testimonial-slide {
+        scroll-snap-align: start;
+        flex-shrink: 0;
+        width: 100%; /* Each card takes up the full viewport width */
+        box-sizing: border-box; /* Include padding in width calculation */
+    }
+
+    /* Hide scrollbar for a cleaner look on mobile */
+    .testimonial-slider::-webkit-scrollbar {
+        display: none;
+    }
+
+    .testimonial-slider {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+}
+</style>

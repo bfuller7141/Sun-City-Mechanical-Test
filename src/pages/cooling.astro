@@ -1,0 +1,105 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import CTAMain from '../components/CTAMain.astro';
+import Footer from '../components/Footer.astro';
+import MainNav from '../components/MainNav.astro';
+import ServiceGridCool from '../components/service page/ServiceGridCool.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import SkipToMain from '../components/SkipToMain.astro';
+import TestimonialCardWrap from '../components/TestimonialCardWrap.astro';
+import '../styles/global.css';
+---
+
+<html lang="en">
+  <head>
+    <BaseHead
+    title="Cooling Services | Sun City Mechanical"
+    description="Expert cooling services for your home in Buckeye, Peoria, Surprise, Goodyear, Sun City, and the surrounding areas. Stay cool with Sun City Mechanical."
+    keywords="cooling, HVAC, air conditioning, AC repair, West Valley, Buckeye, Peoria, Surprise, Goodyear, Sun City, Sun City West, Avondale, El Mirage, Arizona"
+    image="/path-to-cooling-image.jpg"
+    url="https://www.suncitymechanical.com/cooling"
+    
+    />
+    <meta name="author" content="Tripass Design" />
+  </head>
+  <body>
+    <SkipToMain />
+    <header>
+      <MainNav />
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero-global">
+          <div class="container">
+            <div class="wrapper center">
+              <div class="line"></div>
+              <h1 class="page-title">Cooling</h1>
+              <p class="paragraph-center">Stay cool and comfortable all year long with Sun City Mechanical’s expert cooling services. From installations to repairs, our team is dedicated to keeping your home at the perfect temperature, even during the hottest days.</p>
+            </div>
+            <div class="btn-wrapper center">
+              <a href="#services" class="btn" aria-label="Our cooling services">Cooling Services</a>
+              <a href="/schedule" class="btn-blue" aria-label="Schedule a service">Schedule A Service</a>
+            </div>
+          </div>
+        </section>
+        <section id="services">
+          <div class="padding-global">
+            <div class="container">
+              <ServiceGridCool />
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="padding-global">
+            <div class="container">
+              <div class="column-2">
+                <img src="/images/ssm-team.jpg" alt="Sun City Mechanical team" class="image" />
+                <div class="wrapper">
+                    <h2 class="section-title">Have A Question<br><span class="red">Ask A Technician</span></h2>
+                  <p class="paragraph">Got a question about your cooling system? Our experienced technicians are here to assist. Whether you’re facing a specific issue or just want some guidance on keeping your home cool, we’re here to help. Reach out, and we’ll get you the answers you need.</p>
+                  <div class="btn-wrapper">
+                    <a href="/ask-a-tech" class="btn" aria-label="Ask a technician">Ask A Technician</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+        <section>
+          <div class="padding-global">
+            <div class="container">
+              <div class="wrapper">
+                <h2 class="section-title">Great Service<br><span class="title-section red">For Over 20 Years</span></h2>
+                <TestimonialCardWrap />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="padding-global">
+            <div class="container">
+              <h2 class="section-title margin-bottom">Other<span class="red"> Services</span></h2>
+              <div class="column-2">
+                <ServiceCard
+                  title="Heating"
+                  description="We offer a variety of air quality services to keep your home comfortable and safe."
+                  icon="/public/images/icons/heating-icon.svg"
+                  link="/heating" />
+                <ServiceCard
+                  title="Air Quality"
+                  description="Breathe easy with air quality services that help clear the air, giving you fresh, clean air inside your home."
+                  icon="/public/images/icons/air-quality-icon.svg"
+                  link="/air-quality" />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <CTAMain />
+        </section>
+      </main>
+      <footer class="footer">
+        <Footer />
+      </footer>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+---
+import '../styles/global.css';
+import TestimonialCard from './TestimonialCard.astro';
+
+const testimonials = await Astro.glob("../content/testimonials/*.md");
+
+function shuffleArray(array: any[]) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+const randomTestimonials = shuffleArray(testimonials).slice(0, 6); // Displaying 6 testimonials in the grid
+---
+
+<div class="testimonial-grid-wrapper">
+    <div class="testimonial-grid">
+        {randomTestimonials.map((testimonial, index) => (
+            <div>
+                <TestimonialCard
+                    name={testimonial.frontmatter.name} 
+                    rating={testimonial.frontmatter.rating}
+                    quote={testimonial.frontmatter.testimonial}
+                />
+            </div>
+        ))}
+    </div>
+</div>
+
+<style>
+.testimonial-grid-wrapper {
+    padding: 2rem;
+    width: 100%;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr)); /* Grid layout with responsive columns */
+    gap: 1.5rem;
+}
+
+.testimonial-card {
+    box-shadow: var(--box-shadow);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background-color: var(--white);
+}
+</style>

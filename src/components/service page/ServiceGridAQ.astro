@@ -1,0 +1,18 @@
+---
+import '../../styles/global.css';
+import { getCollection } from 'astro:content';
+import ServiceCardAQ from '../ServiceCardAQ.astro';
+
+const services = await getCollection('air-quality');
+---
+
+<div class="column-2">
+    {services.map(service => (
+        <ServiceCardAQ
+            title={service.data.title}
+            description={service.data.description}
+            icon={service.data.icon}
+            link={`/air-quality/${service.slug}`}
+        />
+    ))}
+</div>

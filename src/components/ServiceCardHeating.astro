@@ -1,0 +1,66 @@
+---
+import '../styles/global.css';
+
+export interface ServiceCardProps {
+  title: string;
+  description: string;
+  icon: string;
+  link: string;
+}
+
+const { title, description, icon, link } = Astro.props as ServiceCardProps;
+
+function handleClick() {
+    window.location.href = link;
+}
+
+---
+
+<div class="card">
+  <img class="service-icon" src={icon} alt="" />
+  <h3 class="card-title">{title}</h3>
+  <p class="service-desc">{description}</p>
+  <a class="btn-service" href={link} aria-label={`See All ${title} Services`}>Learn More</a>
+
+  <style>
+
+    .service-icon {
+      width: 3rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .title-small,
+    p {
+      flex-grow: 1;
+      margin-top: 0;
+    }
+
+    .btn-service {
+        display: inline-block;
+        width: fit-content;
+        font-family: 'neue-haas-grotesk-text', sans-serif;
+        font-weight: 600;
+        font-size: 1.125rem;
+        line-height: 1.3;
+        color: var(--white);
+        background-color: var(--red-500);
+        text-decoration: none;
+        text-align: center;
+        border: none;
+        border-radius: 0.125rem;
+        padding: 0.75rem 1.75rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: auto;
+    }
+
+    .btn-service:hover {
+        background-color: var(--red-700);
+        transform: translateY(-0.25rem);
+        transition: all 0.3s ease;
+    }
+
+    .service-desc {
+      text-align: left;
+    }
+</style>

@@ -1,0 +1,29 @@
+---
+import CTAMain from "../components/CTAMain.astro";
+import Footer from "../components/Footer.astro";
+import ScheduleForm from "../components/ScheduleForm.astro";
+
+---
+<ScheduleForm />
+<section>
+    <div class="padding-global">
+        <div class="container">
+            <div class="column-2">
+                <div class="wrapper">
+                    <h2 class="section-title">Have a Question?<br><span class="title-section red">Ask A Technician</span></h2>
+                    <p class="paragraph">Got a question about your heating, cooling, or air quality? Our expert technicians are here to help with answers you can trust. Whether you're dealing with a specific issue or just need some friendly advice, we're ready to assist. Reach out, and we’ll get you the information you need to keep your home comfortable.</p>
+                    <div class="btn-wrapper">
+                        <a href="/about" class="btn" aria-label="Schedule a call">Ask A Technician</a>
+                    </div>
+                </div>
+                <img src="/public/images/ssm-truck.jpg" alt="Sun City Mechanical team" class="image" />
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <CTAMain />
+</section>
+<footer class="footer">
+<Footer />
+</footer>

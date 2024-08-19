@@ -1,0 +1,118 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import MainNav from "../components/MainNav.astro";
+import ServiceCardWrap from "../components/ServiceCardWrap.astro";
+import TestimonialCardWrap from "../components/TestimonialCardWrap.astro";
+import CTAMain from "../components/CTAMain.astro";
+import Footer from "../components/Footer.astro";
+import SkipToMain from "../components/SkipToMain.astro";
+type Props = CollectionEntry<'cities'>['data'];
+const { city, image, about } = Astro.props;
+---
+<html lang="en">
+  <head>
+    <BaseHead
+      title={`Service in ${city} | Sun City Mechanical`}
+      description="Sun City Mechanical is a full-service HVAC company in Arizona. We offer heating, cooling, and plumbing services across the West Valley."
+      keywords="HVAC, heating, cooling, air quality, Arizona"
+      image="/images/default-image.jpg"
+      url="https://www.suncitymechanical.com/"
+    />
+    <meta name="author" content="Tripass Design" />
+  </head>
+  <body>
+    <SkipToMain />
+    <header>
+      <MainNav />
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero-global">
+          <div class="container">
+            <div class="wrapper center">
+              <div class="line"></div>
+              <h1 class="page-title">{city}</h1>
+            </div>
+            <div class="btn-wrapper center">
+              <a href="/services" class="btn" aria-label="View our services">Our Services</a>
+              <a href="/contact" class="btn-blue" aria-label="Contact us today">Contact Us</a>
+            </div>
+        </section>
+        <section>
+          <div class="large-bottom">
+            <div class="container">
+              <div class="column-2">
+                <img class="image" src={`/${image}`} alt={`Image of ${city}`} />
+                <div class="wrapper">
+                  <h2 class="section-title">HVAC Services<br><span class="red">For {city}</span></h2>
+                  <div class="paragraph" set:html={about}></div>
+                  <div class="btn-wrapper">
+                    <a href="/about" class="btn" aria-label="Schedule a call">Schedule A Call</a>
+                    <a href="/about" class="btn-blue" aria-label="Learn more about us">Learn More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="blue-img divider-top">
+          <div class="padding-global">
+            <div class="container">
+              <ServiceCardWrap />
+            </div>
+            <div class="padding-global">
+              <div class="container">
+                <div class="column-2">
+                  <div class="wrapper">
+                    <div class="title-wrapper">
+                      <h2 class="section-title white">Family Owned<br>Family Focused</h2>
+                      <div class="underline"></div>
+                    </div>
+                    <p class="paragraph white">At Sun City Mechanical, family is the foundation of everything we do...</p>
+                    <div class="btn-wrapper">
+                      <a href="/about" class="btn" aria-label="Schedule a call">Schedule A Call</a>
+                      <a href="/about" class="btn-white" aria-label="Learn more about us">Learn More</a>
+                    </div>
+                  </div>
+                  <img src="/images/ssm-team.jpg" alt="Sun City Mechanical team" class="image" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="padding-global">
+            <div class="container">
+              <div class="wrapper">
+                <h2 class="section-title">Great Service<br><span class="title-section red">For Over 20 Years</span></h2>
+                <TestimonialCardWrap />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="padding-global">
+            <div class="container">
+              <div class="column-2">
+                <div class="wrapper">
+                  <h2 class="section-title">Have a Question?<br><span class="title-section red">Ask A Technician</span></h2>
+                  <p class="paragraph">Got a question about your heating, cooling, or air quality?...</p>
+                  <div class="btn-wrapper">
+                    <a href="/about" class="btn" aria-label="Schedule a call">Ask A Technician</a>
+                  </div>
+                </div>
+                <img src="/images/ssm-truck.jpg" alt="Sun City Mechanical truck" class="image" />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <CTAMain />
+        </section>
+      </main>
+      <footer class="footer">
+        <Footer />
+      </footer>
+  </body>
+</html>

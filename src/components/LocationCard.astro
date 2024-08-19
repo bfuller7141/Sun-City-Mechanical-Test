@@ -1,0 +1,86 @@
+---
+import '../styles/global.css';
+
+export interface LocationCardProps {
+  city: string;
+  image: string;
+  slug: string;
+}
+
+const { city, image, slug } = Astro.props as LocationCardProps;
+
+---
+<li>
+  <a class="card location-card" href={`/cities/${slug}`} aria-label={`Learn more about services in ${city}`}>
+    <div class="image-container">
+      <img class="location-image" src={image} alt={`Overhead of ${city}`} />
+    </div>
+    <div class="location-content">
+      <h3 class="card-title location">{city}</h3>
+      <svg id="arrow" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 397.15 397.15" fill="currentcolor" class="solid-arrow">
+          <path class="cls-1" d="M332.45,26.49H65.71c-21.1,0-38.21,17.11-38.21,38.21v266.73c0,21.1,17.11,38.21,38.21,38.21h266.73c21.1,0,38.21-17.11,38.21-38.21V64.7c0-21.1-17.11-38.21-38.21-38.21ZM271.02,206.46l-111.42,99.4c-7.25,6.47-18.74,1.32-18.74-8.39V98.67c0-9.72,11.49-14.86,18.74-8.39l111.42,99.4c5.01,4.47,5.01,12.32,0,16.79Z"/>
+      </svg>
+    </div>
+  </a>
+</li>
+
+<style>
+  .location-card {
+    padding: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 100%;
+    overflow: hidden;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    gap: 0;
+  }
+
+  .image-container {
+    width: 100%;
+    max-width: 100%;
+    height: 15rem;
+    overflow: hidden;
+  }
+
+  .location-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+  }
+
+  .location-content {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    box-sizing: border-box;
+  }
+
+  .solid-arrow {
+    width: 1.75rem;
+    fill: var(--dark-blue-500);
+    transition: all 0.3s ease;
+  }
+
+  .location-card:hover .location-image {
+    transform: scale(1.1);
+    object-fit: cover;
+    transition: all 0.3s ease;
+  }
+
+  .location-card:hover .solid-arrow {
+    fill: var(--red-500);
+    transform: translateX(0.25rem);
+    transition: all 0.3s ease;
+  }
+
+  .location-card:hover .card-title.location {
+    color: var(--red-500);
+    transition: all 0.3s ease;
+  }
+</style>

@@ -1,0 +1,117 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import MainNav from "../components/MainNav.astro";
+import Footer from "../components/Footer.astro";
+import FAQ from "../components/FAQ.astro";
+import CTAMain from "../components/CTAMain.astro";
+import SkipToMain from "../components/SkipToMain.astro";
+
+// Define the Props type for the air-quality content
+type PropsAirQuality = CollectionEntry<'air-quality'>['data'];
+type PropsHeating = CollectionEntry<'heating'>['data'];
+type PropsCooling = CollectionEntry<'cooling'>['data'];
+
+// Destructure the title, description, content, and FAQs from props
+const { title, description, content, question1, answer1, question2, answer2, question3, answer3 } = Astro.props as PropsAirQuality | PropsHeating | PropsCooling;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead
+      title={`${title} Services in Arizona | Sun City Mechanical`}
+      description={`${description}`}
+      keywords="HVAC, heating, cooling, air quality, Arizona"
+      image="/images/default-image.jpg"
+      url={`https://www.suncitymechanical.com/${Astro.props.slug}`}
+    <meta name="author" content="Tripass Design" />
+  </head>
+  <body>
+    <SkipToMain />
+    <header>
+      <MainNav />
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero-global">
+          <div class="container">
+            <div class="wrapper center">
+              <div class="line"></div>
+              <h1 class="page-title">{title}</h1>
+            </div>
+            <div class="btn-wrapper center">
+              <a href="/services" class="btn" aria-label="View our services">Our Services</a>
+              <a href="/contact" class="btn-blue" aria-label="Contact us today">Contact Us</a>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="padding-global">
+            <div class="container blog">
+              <div set:html={content}></div>
+            </div>
+          </div>
+        </section>
+        {question1 && answer1 ? (
+        <section>
+          <div class="padding-global">
+            <div class="container blog">
+              <h2 class="section-title margin-bottom">Tips & FAQs</h2>
+              {question1 && answer1 && (
+                <FAQ 
+                  question={question1}
+                  answer={answer1}
+                />
+              )}
+              {question2 && answer2 && (
+                <FAQ 
+                  question={question2}
+                  answer={answer2}
+                />
+              )}
+              {question3 && answer3 && (
+                <FAQ 
+                  question={question3}
+                  answer={answer3}
+                />
+              )}
+            </div>
+          </div>
+        </section>
+        ) : null}
+			<section>
+				<div class="padding-global">
+					<div class="container">
+						<div class="column-2">
+							<div class="wrapper">
+								<h2 class="section-title">Have a Question?<br><span class="title-section red">Ask A Technician</span></h2>
+								<p class="paragraph">Got a question about your heating, cooling, or air quality? Our expert technicians are here to help with answers you can trust. Whether you're dealing with a specific issue or just need some friendly advice, we're ready to assist. Reach out, and we’ll get you the information you need to keep your home comfortable.</p>
+								<div class="btn-wrapper">
+									<a href="/about" class="btn" aria-label="Schedule a call">Ask A Technician</a>
+								</div>
+							</div>
+							<img src="/public/images/ssm-truck.jpg" alt="Sun City Mechanical team" class="image" />
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<CTAMain />
+			</section>
+      </main>
+      <footer class="footer">
+        <Footer />
+      </footer>
+  </body>
+</html>
+
+<style>
+  p {
+    text-align: left;
+  }
+  @media (max-width: 560px) {
+    p {
+      text-align: left;
+    }
+  }
+</style>

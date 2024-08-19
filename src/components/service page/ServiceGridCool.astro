@@ -1,0 +1,18 @@
+---
+import '../../styles/global.css';
+import { getCollection } from 'astro:content';
+import ServiceCardCooling from '../ServiceCardCooling.astro';
+
+const services = await getCollection('cooling');
+---
+
+<div class="column-2">
+    {services.map(service => (
+        <ServiceCardCooling
+            title={service.data.title}
+            description={service.data.description}
+            icon={service.data.icon}
+            link={`/cooling/${service.slug}`}
+        />
+    ))}
+</div>

@@ -1,0 +1,76 @@
+---
+import '../styles/global.css';
+
+export interface TestimonialCardProps {
+    name: string;
+    rating: number;
+    quote: string;
+}
+
+const { name, rating, quote } = Astro.props as TestimonialCardProps;
+const fullStars = Math.floor(rating); // Number of full stars
+const emptyStars = 5 - fullStars; // Remaining empty stars
+---
+
+<div class="testimonial-card" aria-label="testimonial">
+    <div class="rating">
+        {Array(fullStars).fill('★').map((_, index) => (
+            <span class="rating-star full">★</span>
+        ))}
+        {Array(emptyStars).fill('☆').map((_, index) => (
+            <span class="rating-star empty">★</span>
+        ))}
+    </div>
+    <p class="quote">{quote}</p>
+    <div class="name">{name}</div>
+</div>
+
+<style>
+.testimonial-card {
+    box-sizing: border-box;
+    padding: 1.5rem;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100%;
+    margin: 0;
+}
+
+.testimonial-card p.quote {
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.testimonial-card .name {
+    font-weight: bold;
+    margin-top: auto;
+    color: var(--blue-500);
+}
+
+.rating {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.rating-star {
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--red-500);
+}
+
+.rating-star.empty {
+    color: var(--gray-600);
+}
+
+@media (max-width: 560px) {
+    .testimonial-card {
+        justify-content: center;
+        align-items: center;
+    }
+}
+</style>

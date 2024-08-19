@@ -1,0 +1,189 @@
+---
+import BaseHead from "./BaseHead.astro";
+import SkipToMain from "./SkipToMain.astro";
+import '../styles/global.css';
+import MainNav from "./MainNav.astro";
+---
+
+<html lang="en">
+  <head>
+    <BaseHead
+    title="Ask a Tech | Sun City Mechanical"
+    description="Have questions about your HVAC system? Ask our experts at Sun City Mechanical, serving Buckeye, Peoria, Surprise, Goodyear, Sun City, and beyond."
+    keywords="ask a tech, HVAC, heating, cooling, plumbing, West Valley, Buckeye, Peoria, Surprise, Goodyear, Sun City, Sun City West, Avondale, El Mirage, Arizona"
+    image="/path-to-ask-a-tech-image.jpg"
+    url="https://www.suncitymechanical.com/ask-a-tech"
+    
+    />
+    <meta name="author" content="Tripass Design" />
+    <!-- Include reCAPTCHA script -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdLUykqAAAAALdBQc4YiSG2RwI63H7onrLJ9ZDH"></script>
+  </head>
+  <body>
+    <SkipToMain />
+    <header>
+      <MainNav />
+    </header>
+    <main id="main-content">
+      <section class="ask-tech-form-section">
+          <div class="large-top">
+              <div class="container">
+                  <div class="wrapper center">
+                  <h1 class="page-title">Ask a Tech</h1>
+                  <div class="line margin-bottom"></div>
+                  </div>
+              </div>
+              <div class="container blog">
+              <form 
+              name="ask-a-tech-form" 
+              method="POST" 
+              data-netlify="true" 
+              data-netlify-honeypot="bot-field"
+              class="ask-tech-form"
+              >
+              <input type="hidden" name="form-name" value="ask-a-tech-form" />
+          
+              <!-- Hide the "Don't fill this out" field -->
+              <div class="hidden" style="display: none;">
+                  <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+              </div>
+          
+              <!-- First Name and Last Name -->
+              <div class="form-row">
+                  <div class="form-group">
+                  <label for="first-name">First Name*</label>
+                  <input type="text" id="first-name" name="first-name" class="text-field" placeholder="John" autocomplete="given-name" required />
+                  </div>
+                  <div class="form-group">
+                  <label for="last-name">Last Name*</label>
+                  <input type="text" id="last-name" name="last-name" class="text-field" placeholder="Doe" autocomplete="family-name" required />
+                  </div>
+              </div>
+          
+              <!-- Email -->
+              <div class="form-group">
+                  <label for="email">Email*</label>
+                  <input type="email" id="email" name="email" class="text-field" placeholder="john.doe@example.com" autocomplete="email" required />
+              </div>
+          
+              <!-- Phone Number -->
+              <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" class="text-field" placeholder="(123) 456-7890" autocomplete="tel" />
+              </div>
+          
+              <!-- Type of Service -->
+              <div class="form-group">
+                  <label for="service-type">Service Type*</label>
+                  <select id="service-type" name="service-type" class="text-field" required>
+                  <option value="" disabled selected>Select a service</option>
+                  <option value="heating">Heating</option>
+                  <option value="cooling">Cooling</option>
+                  <option value="air-quality">Air Quality</option>
+                  </select>
+              </div>
+          
+              <!-- Message -->
+              <div class="form-group">
+                  <label for="message">Message*</label>
+                  <textarea id="message" name="message" class="text-field" placeholder="Enter your question or comment here..." required></textarea>
+              </div>
+
+              <!-- reCaptcha -->
+              <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+          
+              <!-- Submit Button -->
+              <div class="form-group">
+                  <button type="submit" class="btn btn-red">Submit</button>
+              </div>
+              </form>
+          </div>
+      </div>
+      </section>
+      
+      <style>
+        .ask-tech-form {
+          display: grid;
+          gap: var(--spacing-lg);
+        }
+      
+        .form-group, .form-row {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+        }
+        
+        .form-row {
+          flex-direction: row;
+          gap: var(--spacing-lg);
+        }
+      
+        label {
+          font-size: var(--font-lg);
+          color: var(--dark-blue-500);
+          margin-bottom: var(--spacing-xs);
+          font-family: 'neue-haas-grotesk-text', sans-serif;
+        }
+      
+        .text-field {
+          padding: var(--spacing-sm);
+          font-size: var(--font-md);
+          font-family: 'neue-haas-grotesk-text', sans-serif;
+          color: var(--navy);
+          border: 2px solid var(--blue-500);
+          border-radius: 0.25rem;
+          background-color: transparent;
+          transition: border-color 0.3s ease, background-color 0.3s ease;
+          width: 100%;
+        }
+      
+        .text-field:focus, .text-field:hover {
+          outline: none;
+          border-color: var(--light-blue-500);
+          background-color: transparent;
+        }
+      
+        button.btn-red {
+          padding: var(--spacing-sm) var(--spacing-md);
+          font-size: var(--font-lg);
+          background-color: var(--red-500);
+          color: var(--white);
+          border: none;
+          border-radius: 0.125rem;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+          width: 100%;
+        }
+      
+        button.btn-red:hover {
+          background-color: var(--red-700);
+        }
+      
+        /* Responsive styles */
+        @media (max-width: 768px) {
+          .ask-tech-form {
+            grid-template-columns: 1fr;
+          }
+          .form-row {
+            flex-direction: column;
+          }
+        }
+      </style>
+    </main>
+
+    <!-- Declare grecaptcha globally -->
+    <script>
+      declare var grecaptcha: any;
+
+      grecaptcha.ready(function() {
+          grecaptcha.execute('6LdLUykqAAAAALdBQc4YiSG2RwI63H7onrLJ9ZDH', {action: 'submit'}).then(function(token: string) {
+              const recaptchaResponse = document.getElementById('g-recaptcha-response') as HTMLInputElement | null;
+              if (recaptchaResponse) {
+                  recaptchaResponse.value = token;
+              }
+          });
+      });
+    </script>
+    
+  </body>
+</html>

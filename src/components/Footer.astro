@@ -1,0 +1,41 @@
+---
+import '../styles/global.css';
+import '../styles/footer.css';
+import FacebookButton from './FacebookButton.astro';
+---
+<div class="padding-global">
+    <div class="container">
+        <div class="wrapper-footer">
+            <div class="footer-logo">
+                <img src="/images/ssm-logo-white.svg" alt="Sun City Mechanical logo" />
+                <FacebookButton />
+            </div>
+            <nav class="footer-nav" aria-label="Footer Navigation">
+                <ul>
+                    <li class="foot-title">What We Do</li>
+                    <li><a href="/heating">Heating</a></li>
+                    <li><a href="/cooling">Cooling</a></li>
+                    <li><a href="/air-quality">Air Quality</a></li>
+                </ul>
+                <ul>
+                    <li class="foot-title">Our Company</li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/testimonials">Testimonials</a></li>
+                </ul>
+                <ul>
+                    <li class="foot-title">Get In Touch</li>
+                    <li><a href="/schedule">Schedule A Service</a></li>
+                    <li><a href="/ask-a-tech">Ask A Technician</a></li>
+                    <li><a href="tel:+16232142366">(623) 214-2366</a></li>
+                </ul>
+                <ul>
+                    <li class="foot-title">Our Hours</li>
+                    <li class="link">7:00 - 5:30 M-F</li>
+                    <li class="link">Saturday Closed</li>
+                    <li class="link">Sunday Closed</li>
+                    <li class="link">24/7 Emergency Service</li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>

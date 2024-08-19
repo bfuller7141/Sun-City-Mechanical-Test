@@ -1,0 +1,14 @@
+---
+import '../styles/global.css'
+
+export interface MissionCardProps {
+    value: string;
+    description: string;
+}
+
+const { value, description } = Astro.props as MissionCardProps
+---
+<div class="card">
+    <h3 class="card-title">{value}</h3>
+    <p class="text-small">{description}</p>   
+</div>   

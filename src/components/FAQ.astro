@@ -1,0 +1,148 @@
+---
+import '../styles/global.css';
+
+export interface FAQProps {
+  question: string;
+  answer: string;
+}
+
+const { question, answer } = Astro.props as FAQProps;
+---
+<div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+        <span class="faq-text">{question}</span>
+        <span class="faq-icon faq-icon-plus">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#dd1d36">
+                <path d="M24 9h-9v-9h-6v9h-9v6h9v9h6v-9h9z"/>
+            </svg>
+        </span>
+        <span class="faq-icon faq-icon-minus">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#dd1d36">
+                <path d="M0 9h24v6h-24z"/>
+            </svg>
+        </span>
+    </button>
+    <div class="faq-answer">
+        <p>{answer}</p>
+    </div>
+</div>
+
+<style>
+  .faq-item {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1rem;
+      background-color: var(--white);
+      box-shadow: var(--box-shadow);
+      border-radius: 0.25rem;
+      margin-bottom: var(--spacing-sm);
+  }
+
+  .faq-question {
+    font-family: 'neue-haas-grotesk-text', sans-serif;
+    font-weight: 600;
+    font-size: var(--font-lg);
+    line-height: 1.5;
+    color: var(--blue-500);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--spacing-sm) 0;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+
+  .faq-icon {
+    display: inline-flex;
+    transition: transform 0.3s ease;
+  }
+
+  .faq-icon-minus {
+    display: none; /* Hide the minus icon initially */
+  }
+
+  /* Toggle icons based on the expanded state */
+  .faq-question[aria-expanded="true"] .faq-icon-plus {
+    display: none;
+  }
+
+  .faq-question[aria-expanded="true"] .faq-icon-minus {
+    display: inline-flex;
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 var(--spacing-sm);
+  }
+
+  .faq-item[aria-expanded="true"] .faq-answer {
+    max-height: 10rem;
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+
+  .faq-answer p {
+    font-size: var(--font-md);
+    font-family: 'neue-haas-grotesk-text', sans-serif;
+    line-height: 1.5;
+    color: var(--gray-900);
+    margin: 0;
+    text-align: left;
+  }
+
+  @media (max-width: 560px) {
+    /* Hide both plus and minus icons on mobile */
+    .faq-icon {
+      display: none !important;
+    }
+
+    /* Ensure text stays justified to the left on mobile */
+    .faq-question {
+      justify-content: flex-start;
+    }
+    .faq-answer p {
+      text-align: left;
+    }
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const faqItem = button.closest('.faq-item');
+      
+      if (!faqItem) return;
+
+      const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+      // Collapse all items except the one being clicked
+      document.querySelectorAll('.faq-item').forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+
+        if (question && answer) {
+          question.setAttribute('aria-expanded', 'false');
+          (answer as HTMLElement).style.maxHeight = ''; 
+        }
+      });
+
+      const answer = faqItem.querySelector('.faq-answer');
+      if (answer) {
+        if (!isExpanded) {
+          button.setAttribute('aria-expanded', 'true');
+          (answer as HTMLElement).style.maxHeight = answer.scrollHeight + 'px';
+        } else {
+          button.setAttribute('aria-expanded', 'false');
+          (answer as HTMLElement).style.maxHeight = '';
+        }
+      }
+    });
+  });
+</script>

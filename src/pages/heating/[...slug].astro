@@ -1,0 +1,21 @@
+---
+import ServicePage from "../../layouts/ServicePage.astro";
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const airQuality = await getCollection("heating");
+  return airQuality.map((item) => ({
+    params: { slug: item.slug },
+    props: { ...item },
+  }));
+}
+
+type Props = CollectionEntry<'heating'>;
+
+const heatingItem = Astro.props as Props;
+const { Content } = await heatingItem.render();
+---
+
+<ServicePage {...heatingItem.data}></ServicePage>
+  <Content />
+</ServicePage>

@@ -1,0 +1,8 @@
+---
+city: "Goodyear"
+image: "images/cities/goodyear.webp"
+slug: "goodyear"
+about: "We’re proud to serve the Goodyear community. At Sun City Mechanical, family isn’t just a word; it’s the heart of everything we do. Started by Gary Ferguson and now led by his niece, Jenni, we’ve always believed in treating our customers like family. When you choose us, you can expect the same warmth, care, and dedication that we’d offer our own.
+
+In Goodyear, we know how important it is to maintain a comfortable home year-round. Whether it’s keeping cool in the summer or staying warm in the winter, our team is here to make sure your home feels just right. With us, you’re not just getting a service—you’re getting a family that’s always here to help."
+---

@@ -1,0 +1,21 @@
+---
+import CityPage from "../../layouts/CityPage.astro";
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const cities = await getCollection("cities");
+  return cities.map((city) => ({
+    params: {slug: city.slug},
+    props: { ...city },
+  }));
+}
+type Props = CollectionEntry<'cities'>;
+
+const city = Astro.props as Props;
+const { Content } = await city.render();
+---
+
+<CityPage {...city.data}>
+  <Content />
+</CityPage>`;
+

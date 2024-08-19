@@ -1,0 +1,42 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import MainNav from "../components/MainNav.astro";
+import SkipToMain from "../components/SkipToMain.astro";
+import TestimonialGrid from "../components/TestimonialGrid.astro";
+---
+<html lang="en">
+<head>
+  <BaseHead
+  title="Customer Testimonials | Sun City Mechanical"
+  description="Read customer testimonials for Sun City Mechanical, trusted HVAC services in Buckeye, Peoria, Surprise, Goodyear, Sun City, and the West Valley."
+  keywords="customer testimonials, HVAC, heating, cooling, plumbing, West Valley, Buckeye, Peoria, Surprise, Goodyear, Sun City, Sun City West, Avondale, El Mirage, Arizona"
+  image="/path-to-testimonials-image.jpg"
+  url="https://www.suncitymechanical.com/testimonials"  
+  />
+  <meta name="author" content="Tripass Design" />
+</head>
+<body>
+  <SkipToMain />
+  <header>
+    <MainNav />
+  </header>
+  <main id="main-content">
+    <section class="ask-tech-form-section">
+        <div class="large-top">
+            <div class="container">
+                <div class="wrapper center">
+                <h1 class="page-title">Testimonials</h1>
+                <div class="line margin-bottom"></div>
+            </div>
+        </div>
+        <div class="container">
+            <TestimonialGrid />
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <Footer />
+</footer>
+</body>
+</html>

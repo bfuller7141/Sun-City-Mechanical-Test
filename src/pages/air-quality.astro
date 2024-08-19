@@ -1,0 +1,105 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import CTAMain from '../components/CTAMain.astro';
+import Footer from '../components/Footer.astro';
+import MainNav from '../components/MainNav.astro';
+import ServiceGridAQ from '../components/service page/ServiceGridAQ.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import SkipToMain from '../components/SkipToMain.astro';
+import TestimonialCardWrap from '../components/TestimonialCardWrap.astro';
+import '../styles/global.css';
+---
+
+<html lang="en">
+  <head>
+    <BaseHead
+    title="Air Quality Services | Sun City Mechanical"
+    description="Improve your home's air quality with our expert HVAC services. Serving Buckeye, Peoria, Surprise, Goodyear, Sun City, Sun City West, Avondale, and El Mirage."
+    keywords="air quality, HVAC, heating, cooling, air purification, West Valley, Buckeye, Peoria, Surprise, Goodyear, Sun City, Sun City West, Avondale, El Mirage, Arizona"
+    image="/path-to-air-quality-image.jpg"
+    url="https://www.suncitymechanical.com/air-quality"    
+    />
+    <meta name="author" content="Tripass Design" />
+  </head>
+  <body>
+    <SkipToMain />
+    <header>
+      <MainNav />
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero-global">
+          <div class="container">
+            <div class="wrapper center">
+              <div class="line"></div>
+              <h1 class="page-title">Air Quality</h1>
+              <p class="paragraph-center">Breathe easier with Sun City Mechanical’s expert air quality services. We’re here to help you create a healthier home environment by ensuring the air you and your family breathe is clean and safe, every day.</p>
+            </div>
+            <div class="btn-wrapper center">
+              <a href="#services" class="btn" aria-label="View our air quality services">Air Quality Services</a>
+              <a href="/schedule" class="btn-blue" aria-label="schedule a service">Schedule A Service</a>           
+          </div>
+          </div>
+        </section>
+        <section id="services">
+          <div class="padding-global">
+            <div class="container">
+              <ServiceGridAQ />
+            </div>
+          </div>
+        </section>
+        <section>
+            <div class="padding-global">
+              <div class="container">
+                <div class="column-2">
+                  <img src="/images/ssm-team.jpg" alt="Sun City Mechanical team" class="image" />
+                  <div class="wrapper">
+                      <h2 class="section-title">Have A Question<br><span class="red">Ask A Technician</span></h2>
+                    <p class="paragraph">Have a question about your home’s air quality? Our knowledgeable technicians are here to help. Whether you’re unsure about a specific issue or just need some expert advice, don’t hesitate to reach out. We’re ready to provide the answers you need.</p>
+                    <div class="btn-wrapper">
+                      <a href="/ask-a-tech" class="btn" aria-label="Ask a technician">Ask A Technician</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="padding-global">
+            <div class="container">
+              <div class="wrapper">
+                <h2 class="section-title">Great Service<br><span class="title-section red">For Over 20 Years</span></h2>
+                <TestimonialCardWrap />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="padding-global">
+            <div class="container">
+            <h2 class="section-title margin-bottom">Other<span class="red"> Services</span></h2>
+              <div class="column-2">
+                <ServiceCard
+                  title="Heating"
+                  description="We offer a variety of air quality services to keep your home comfortable and safe."
+                  icon="/public/images/icons/heating-icon.svg"
+                  link="/heating" />
+                <ServiceCard
+                  title="Cooling"
+                  description="We offer a variety of air quality services to keep your home comfortable and safe."
+                  icon="/public/images/icons/cooling-icon.svg"
+                  link="/cooling" />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <CTAMain />
+        </section>
+      </main>
+      <footer class="footer">
+        <Footer />
+      </footer>
+  </body>
+</html>
+

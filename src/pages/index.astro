@@ -1,0 +1,118 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import MainNav from "../components/MainNav.astro";
+import SkipToMain from "../components/SkipToMain.astro";
+import LocationCardWrap from "../components/LocationCardWrap.astro";
+import ServiceCardWrap from "../components/ServiceCardWrap.astro";
+import TestimonialCardWrap from "../components/TestimonialCardWrap.astro";
+import CTAMain from "../components/CTAMain.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<html lang="en">
+	<head>
+		<BaseHead
+		title="Sun City Mechanical | HVAC Services in West Valley"
+		description="Sun City Mechanical offers full-service HVAC solutions in the West Valley, including Buckeye, Peoria, Surprise, Goodyear, Sun City, Sun City West, Avondale, and El Mirage."
+		keywords="HVAC, heating, cooling, plumbing, West Valley, Buckeye, Peoria, Surprise, Goodyear, Sun City, Sun City West, Avondale, El Mirage, Arizona"
+		image="/path-to-homepage-image.jpg"
+		url="https://www.suncitymechanical.com/"		
+		/>
+		<meta name="author" content="Tripass Design" />
+	</head>
+	<body>
+		<SkipToMain />
+		<header>
+			<MainNav />
+		</header>
+		<main id="main-content">
+			<section class="hero">
+				<div class="hero-large">
+					<div class="container">
+						<div class="wrapper center">
+							<h1 class="sub-title">Bringing Comfort to the Valley Since 2003</h1>
+							<h2 class="page-title">Heating and Cooling<br>You Can Trust</h2>
+							<div class="btn-wrapper center">
+								<a href="/schedule" class="btn" aria-label="Schedule a service">Schedule A Service</a>
+								<a href="tel:+16232142366" class="btn-blue">
+									<span class="icon">
+										<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="currentColor">
+											<path d="M25.9,20.1,20.85,16.836a2.4,2.4,0,0,0-2.8.139l-2.207,1.762a46.8,46.8,0,0,1-4.016-3.559,46.8,46.8,0,0,1-3.559-4.016l1.762-2.207a2.4,2.4,0,0,0,.139-2.8L6.9,1.1A2.4,2.4,0,0,0,3.178.7L1.2,2.683A4.076,4.076,0,0,0,.179,6.762C.99,9.41,3.019,13.884,8.067,18.933s9.523,7.077,12.171,7.888a4.077,4.077,0,0,0,4.079-1.02l1.979-1.98A2.4,2.4,0,0,0,25.9,20.1" transform="translate(0 0)"></path>
+										</svg>
+									</span>
+									<span>(623) 214-2366</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="blue-img">
+				<div class="padding-global">
+					<div class="container">
+						<ServiceCardWrap/>
+					</div>
+				<div class="padding-global">
+					<div class="container">	
+						<div class="wrapper">
+							<div class="title-wrapper">
+								<h2 class="section-title white">Proudly Serving The<br>Entire West Valley</h2>
+								<div class="underline"></div>
+							</div>
+							<LocationCardWrap role="group" aria-labelledby="cities we serve"/>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="large-top">
+					<div class="container">
+						<div class="column-2">
+							<img src="images/ssm-team.jpg" alt="Sun City Mechanical team" class="image" />
+							<div class="content-wrapper">
+								<h2 class="section-title">Family Owned<br><span class="section-title red">Family Focused</span></h2>
+								<p class="paragraph">At Sun City Mechanical, family is the foundation of everything we do. Started by Gary Ferguson and now run by his niece, Jenni, we’ve always placed family values at the core of our business. We believe in treating our customers the same way we treat our own—with care and respect.</p>
+								<p class= "paragraph">When you choose Sun City Mechanical, you’re not just getting a service provider; you’re joining our family. We’re here to ensure your home stays comfortable, and we take that responsibility seriously. Being family-owned means we’re deeply connected to our community, and we’re proud to serve the West Valley with the same dedication that’s guided us from the start.</p>
+								<div class="btn-wrapper">
+									<a href="/schedule" class="btn" aria-label="Schedule a service">Schedule A Service</a>
+									<a href="/about" class="btn-blue" aria-label="Learn more about us">About Our Company</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="padding-global">
+					<div class="container">
+						<div class="wrapper">
+							<h2 class="section-title">Great Service<br><span class="title-section red">For Over 20 Years</span></h2>
+							<TestimonialCardWrap/>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="padding-global">
+					<div class="container">
+						<div class="column-2">
+							<div class="wrapper">
+								<h2 class="section-title">Have a Question?<br><span class="title-section red">Ask A Technician</span></h2>
+								<p class="paragraph">Got a question about your heating, cooling, or air quality? Our expert technicians are here to help with answers you can trust. Whether you're dealing with a specific issue or just need some friendly advice, we're ready to assist. Reach out, and we’ll get you the information you need to keep your home comfortable.</p>
+								<div class="btn-wrapper">
+									<a href="/ask-a-tech" class="btn" aria-label="Ask a technician">Ask A Technician</a>
+								</div>
+							</div>
+							<img src="images/ssm-truck.jpg" alt="Sun City Mechanical team" class="image" />
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<CTAMain />
+			</section>
+		</main>
+		<footer class="footer">
+			<Footer />
+		</footer>
+	</body>
+</html>
