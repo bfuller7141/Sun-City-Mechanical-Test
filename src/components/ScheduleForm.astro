@@ -1,7 +1,7 @@
 ---
 import BaseHead from "./BaseHead.astro";
 import SkipToMain from "./SkipToMain.astro";
-import '../styles/global.css';
+import '../src/styles/global.css';
 import MainNav from "./MainNav.astro";
 
 // Define the Flatpickr type
@@ -22,14 +22,17 @@ declare global {
   url="https://www.suncitymechanical.com/schedule"  
   />
   <meta name="author" content="Tripass Design" />
-  <!-- Flatpickr CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <!-- reCAPTCHA v3 Script -->
-  <script src="https://www.google.com/recaptcha/api.js?render=6LdLUykqAAAAALdBQc4YiSG2RwI63H7onrLJ9ZDH"></script>
+<!-- Ensure CSS is correctly loaded -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+<!-- Load Flatpickr with defer -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr" defer></script>
+
+<!-- Load reCAPTCHA with async and defer -->
+<script src="https://www.google.com/recaptcha/api.js?render=your-site-key" async defer></script>
+
 </head>
 <body>
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <SkipToMain />
   <header>
     <MainNav />
@@ -132,9 +135,6 @@ declare global {
                 <label for="comments">Additional Comments</label>
                 <textarea id="comments" name="comments" class="text-field" placeholder="Enter any additional information here..."></textarea>
             </div>
-
-            <!-- reCAPTCHA response token -->
-            <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
         
             <!-- Submit Button -->
             <div class="form-group">
@@ -297,16 +297,6 @@ declare global {
               tooltip.remove();
               targetInput.classList.remove('error');
             }, 3000);
-          });
-        });
-    
-        // reCAPTCHA handling
-        (window as any).grecaptcha.ready(function() {
-          (window as any).grecaptcha.execute('6LdLUykqAAAAALdBQc4YiSG2RwI63H7onrLJ9ZDH', {action: 'submit'}).then(function(token: string) {
-              const recaptchaResponse = document.getElementById('g-recaptcha-response') as HTMLInputElement | null;
-              if (recaptchaResponse) {
-                  recaptchaResponse.value = token;
-              }
           });
         });
       });
