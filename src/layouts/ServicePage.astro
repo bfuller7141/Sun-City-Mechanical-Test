@@ -1,4 +1,5 @@
 ---
+import { marked } from 'marked';
 import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import MainNav from "../components/MainNav.astro";
@@ -14,6 +15,9 @@ type PropsCooling = CollectionEntry<'cooling'>['data'];
 
 // Destructure the title, description, content, and FAQs from props
 const { title, description, content, question1, answer1, question2, answer2, question3, answer3 } = Astro.props as PropsAirQuality | PropsHeating | PropsCooling;
+
+// Convert the markdown content to HTML
+const contentHTML = marked(content);
 ---
 
 <html lang="en">
@@ -48,7 +52,7 @@ const { title, description, content, question1, answer1, question2, answer2, que
         <section>
           <div class="padding-global">
             <div class="container blog">
-              <div set:html={content}></div>
+              <div set:html={contentHTML}></div>
             </div>
           </div>
         </section>
