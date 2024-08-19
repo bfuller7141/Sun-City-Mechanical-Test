@@ -1,15 +1,47 @@
 ---
-title: "Accessability"
+title: Accessibility
 content: >-
-  ## Filter Replacement Overview
+  ## Accessibility Statement for Sun City Mechanical
 
 
-  Regular filter replacement is essential for maintaining the efficiency and longevity of your HVAC system. Air filters play a crucial role in trapping dust, allergens, and other airborne particles, preventing them from circulating throughout your home. Over time, these filters can become clogged, reducing airflow and making your system work harder than necessary. Replacing your filters on a regular basis ensures that your system operates efficiently, provides cleaner air, and reduces the strain on your HVAC system, potentially lowering your energy bills and extending the life of your equipment.
+  Sun City Mechanical is committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards.
 
 
-  ## Common Signs for Replacement
+  ### Efforts to support accessibility
 
 
-  Knowing when to replace your HVAC filters is key to maintaining a healthy and efficient system. One of the most obvious signs is visibly dirty or clogged filters, which can lead to reduced airflow and less effective heating or cooling. If you notice that your home is dustier than usual or that allergy symptoms are worsening, it could be a sign that your filters are no longer effectively trapping particles. Another indicator is an increase in energy bills without a corresponding increase in usage, suggesting that your system is working harder to push air through clogged filters. Regular checks and timely replacements can help you avoid these issues.
-slug: "accessability"
+  Sun City Mechanical takes the following measures to ensure accessibility:
+
+
+  Continual accessibility training for our staff.
+
+
+  Regular audits and updates to ensure compliance with current accessibility standards.
+
+
+  Implementation of accessibility features such as alternative text for images, keyboard navigation, and ARIA labels for assistive technologies.
+
+
+  ### Conformance status
+
+
+  The Web Content Accessibility Guidelines (WCAG) define requirements for designers and developers to improve accessibility for people with disabilities. Sun City Mechanical’s website is fully conformant with WCAG 2.1 level AA. Fully conformant means that the content fully conforms to the accessibility standard, ensuring an accessible experience for all users.
+
+
+  ### Feedback
+
+
+  We welcome your feedback on the accessibility of Sun City Mechanical’s website. Please let us know if you encounter accessibility barriers:
+
+
+  Email: info@suncitymechanical.com
+
+
+  Phone: (623) 214-2366
+
+
+
+
+  This statement was last updated on 08/19/2024.
+slug: accessibility
 ---
