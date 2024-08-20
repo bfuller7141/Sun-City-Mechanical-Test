@@ -1,6 +1,4 @@
 ---
-import '../styles/global.css';
-
 export interface ServiceCardProps {
   title: string;
   description: string;
@@ -17,7 +15,7 @@ function handleClick() {
 ---
 
 <div class="card">
-  <img class="service-icon" src={icon} alt="" />
+  <img class="service-icon" src={icon} alt="" width="3rem" height="3rem"/>
   <h3 class="card-title">{title}</h3>
   <p class="service-desc">{description}</p>
   <a class="btn-service" href={link} aria-label={`See All ${title} Services`}>Learn More</a>

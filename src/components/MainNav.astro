@@ -1,5 +1,4 @@
 ---
-import '../styles/global.css';
 import '../styles/navigation.css'
 import { getCollection } from 'astro:content';
 import '../../public/scripts/navbar.js';
@@ -48,8 +47,15 @@ const airQualityContent = await getCollection('air-quality');
     <div class="container">
         <div class="wrapper-nav">
             <a href="/" aria-current="page" class="logo">
-                <img src="/images/logo-main.svg" loading="eager" alt="Sun City Mechanical Logo" />
-            </a>
+                <img
+                  src="/images/logo-main.svg"
+                  loading="eager"
+                  alt="Sun City Mechanical Logo"
+                  width="12rem"
+                  height="4.26rem"
+                  style="width: 12rem; height: auto;" 
+                />
+              </a>              
             <button class="hamburger" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
                 <span class="ham-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
