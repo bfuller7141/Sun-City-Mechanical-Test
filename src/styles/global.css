@@ -414,6 +414,11 @@ p {
     box-shadow: var(--box-shadow);
 }
 
+.service-icon {
+    width: 3rem;
+    height: 3rem;
+}
+
 /* Button Styles */
 .btn,
 .btn-blue, .btn-white {
