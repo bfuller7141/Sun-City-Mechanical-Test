@@ -9,11 +9,22 @@ export interface LocationCardProps {
 
 const { city, image, slug } = Astro.props as LocationCardProps;
 
+// Assume the image URLs for different sizes
+const imageSmall = image.replace('large', 'small'); // Replace 'large' with 'small' in the image filename
+const imageMedium = image.replace('large', 'medium'); // Replace 'large' with 'medium'
 ---
+
 <li>
   <a class="card location-card" href={`/cities/${slug}`} aria-label={`Learn more about services in ${city}`}>
     <div class="image-container">
-      <img class="location-image" src={image} alt={`Overhead of ${city}`} />
+      <img 
+        class="location-image" 
+        src={image} 
+        srcset={`${imageSmall} 400w, ${imageMedium} 800w, ${image} 1200w`} 
+        sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px" 
+        alt={`Overhead of ${city}`} 
+        loading="lazy" 
+      />
     </div>
     <div class="location-content">
       <h3 class="card-title location">{city}</h3>
