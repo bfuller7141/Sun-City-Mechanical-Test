@@ -55,13 +55,14 @@ const airQualityContent = await getCollection('air-quality');
                   height="4.26rem"
                   style="width: 12rem; height: auto;" 
                 />
-              </a>              
+            </a>
             <button class="hamburger" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
-                <span class="ham-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M3 18h18v-2H3v2Zm0-5h18v-2H3v2Zm0-7v2H21V6H3Z"></path>
+                <div class="ham-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 30" fill="currentColor">
+                        <path id="hamburger-icon" d="M3 18h18v-2H3v2Zm0-5h18v-2H3v2Zm0-7v2H21V6H3Z"></path> <!-- Hamburger Icon -->
+                        <path id="x-icon" d="M6 18L18 6M6 6l12 12" style="display:none;"></path> <!-- X Icon -->
                     </svg>
-                </span>
+                </div>
             </button>
             <nav class="nav-menu" id="nav-menu" role="navigation">
                 <ul aria-label="navigation menu">

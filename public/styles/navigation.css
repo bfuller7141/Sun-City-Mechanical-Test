@@ -1,3 +1,22 @@
+.hamburger .x-icon {
+    display: none;
+    stroke: var(--red-500); /* Set the X icon color to red */
+    stroke-width: 2; /* Adjust stroke width as necessary */
+}
+
+.hamburger.active .hamburger-icon {
+    display: none;
+}
+
+.hamburger.active .x-icon {
+    display: block;
+}
+
+.hamburger .hamburger-icon, .hamburger .x-icon {
+    transition: display 0.3s ease; /* Smooth transition */
+}
+
+
 .nav-top {
     max-width: 100%;
     background-color: var(--blue-500);
@@ -31,7 +50,6 @@
     list-style: none;
 }
 
-/* Button Styles */
 .nav-top-button {
     font-family: 'neue-haas-grotesk-text', sans-serif;
     font-weight: 600;
@@ -265,13 +283,13 @@ li:hover .nav-link .icon-nav, li:focus .nav-link .icon-nav {
     z-index: 1000;
 }
 
-.hamburger .ham-icon {
+.ham-icon {
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
     justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    fill: var(--blue-500);
+    align-items: center;
+    width: 2rem; /* Increased size */
+    color: var(--blue-500); /* Change color */
 }
 
 /* Responsive Hamburger */
@@ -319,10 +337,6 @@ li:hover .nav-link .icon-nav, li:focus .nav-link .icon-nav {
 
     .hamburger {
         display: inline-flex;
-    }
-
-    .hamburger.active .ham-icon {
-        fill: var(--red-500);
     }
 
     .dropdown-list {
