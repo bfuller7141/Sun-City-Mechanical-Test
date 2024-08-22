@@ -1,22 +1,3 @@
-.hamburger .x-icon {
-    display: none;
-    stroke: var(--red-500); /* Set the X icon color to red */
-    stroke-width: 2; /* Adjust stroke width as necessary */
-}
-
-.hamburger.active .hamburger-icon {
-    display: none;
-}
-
-.hamburger.active .x-icon {
-    display: block;
-}
-
-.hamburger .hamburger-icon, .hamburger .x-icon {
-    transition: display 0.3s ease; /* Smooth transition */
-}
-
-
 .nav-top {
     max-width: 100%;
     background-color: var(--blue-500);
@@ -50,6 +31,7 @@
     list-style: none;
 }
 
+/* Button Styles */
 .nav-top-button {
     font-family: 'neue-haas-grotesk-text', sans-serif;
     font-weight: 600;
@@ -275,21 +257,47 @@ li:hover .nav-link .icon-nav, li:focus .nav-link .icon-nav {
 
 /* Hamburgers */
 .hamburger {
-    display: none;
-    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
     border: none;
+    background: none;
     cursor: pointer;
-    padding: 1rem;
+}
+
+.hamburger .ham-icon {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: var(--blue-500);
+}
+
+.hamburger-icon,
+.close-icon {
+    width: 2rem;
+    height: 2rem;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.close-icon {
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+    fill: var(--red-500);
     z-index: 1000;
 }
 
-.ham-icon {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 2rem; /* Increased size */
-    color: var(--blue-500); /* Change color */
+.hamburger[aria-expanded="true"] .hamburger-icon {
+    opacity: 0;
+}
+
+.hamburger[aria-expanded="true"] .close-icon {
+    opacity: 1;
+    pointer-events: all;
 }
 
 /* Responsive Hamburger */
@@ -301,10 +309,11 @@ li:hover .nav-link .icon-nav, li:focus .nav-link .icon-nav {
         top: 0rem;
         left: 0;
         width: 100%;
+        height: 100%;
         background-color: var(--white);
         z-index: 500;
         opacity: 0;
-        transition: all 0.5s ease;
+        transition: all 0.5s ease-in-out;
     }
 
     ul {
@@ -335,8 +344,16 @@ li:hover .nav-link .icon-nav, li:focus .nav-link .icon-nav {
         position: fixed;
     }
 
+    body.nav-open {
+        overflow: hidden;
+    }
+
     .hamburger {
         display: inline-flex;
+    }
+
+    .hamburger.active .ham-icon {
+        fill: var(--red-500);
     }
 
     .dropdown-list {

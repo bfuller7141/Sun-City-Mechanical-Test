@@ -55,15 +55,18 @@ const airQualityContent = await getCollection('air-quality');
                   height="4.26rem"
                   style="width: 12rem; height: auto;" 
                 />
-            </a>
-            <button class="hamburger" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
-                <div class="ham-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 30" fill="currentColor">
-                        <path id="hamburger-icon" d="M3 18h18v-2H3v2Zm0-5h18v-2H3v2Zm0-7v2H21V6H3Z"></path> <!-- Hamburger Icon -->
-                        <path id="x-icon" d="M6 18L18 6M6 6l12 12" style="display:none;"></path> <!-- X Icon -->
+              </a>              
+              <button class="hamburger" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+                <span class="ham-icon">
+                    <svg class="hamburger-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#0c5495">
+                        <path d="M3 18h18v-2H3v2Zm0-5h18v-2H3v2Zm0-7v2H21V6H3Z"></path>
                     </svg>
-                </div>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#0c5495">
+                        <path d="M18.3 5.7a1 1 0 0 0-1.4 0L12 10.6 7.1 5.7A1 1 0 1 0 5.7 7.1L10.6 12l-4.9 4.9a1 1 0 0 0 1.4 1.4L12 13.4l4.9 4.9a1 1 0 0 0 1.4-1.4L13.4 12l4.9-4.9a1 1 0 0 0 0-1.4z"></path>
+                    </svg>
+                </span>
             </button>
+            
             <nav class="nav-menu" id="nav-menu" role="navigation">
                 <ul aria-label="navigation menu">
                     <!-- Heating Dropdown -->
@@ -124,3 +127,10 @@ const airQualityContent = await getCollection('air-quality');
         </div>
     </div>
 </div>
+
+<script>
+document.querySelector<HTMLButtonElement>('.hamburger')?.addEventListener('click', function (this: HTMLButtonElement) {
+    const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+    this.setAttribute('aria-expanded', String(!expanded));
+});
+</script>
