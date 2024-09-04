@@ -27,6 +27,7 @@ collections:
       - label: "Image"
         name: "image"
         widget: "image"
+        allow_multiple: true
       - label: "Slug"
         name: "slug"
         widget: "string"
