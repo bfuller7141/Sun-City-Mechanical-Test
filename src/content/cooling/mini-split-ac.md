@@ -29,5 +29,5 @@ answer2: Mini split AC systems should be serviced at least once a year, with
 question3: Can I install a mini split AC system in any room?
 answer3: Yes, mini split systems can be installed in almost any room, making
   them versatile for cooling specific areas. However, the installation should be
-  done by a professional to ensure proper placement and operation....
+  done by a professional to ensure proper placement and operation.
 ---
